@@ -4,8 +4,12 @@
 
 <body>
   <h1>Chillflix</h1>
-    {{> login}}
-    {{> user_info}}
+    <!-- {{> login}}
+    {{> user_info}} -->
+    
+    {{> user_list}}<br><br><br>
+    {{> loginButtons}}
+    
 
 
 </body>
@@ -29,6 +33,15 @@
     {{else}}
     <p>No one is logged in</p>
 
-    {{/if}}
-    
+    {{/if}}  
+</template>
+
+
+<template name="user_list">
+    {{#each users}}
+        Name: {{profile.name}}<br>
+        Gender: {{services.facebook.gender}}<br>
+    <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=100&height=100"><br>
+        <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
+    {{/each}}    
 </template>
