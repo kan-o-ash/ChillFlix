@@ -10,7 +10,7 @@ function findMovies(keyword, cbk) {
 
 };
 
-Template.MovieSearch.helpers({
+Template.movie_search.helpers({
   results: function () {
     if (s_movies){
       return s_movies.find()
@@ -18,13 +18,13 @@ Template.MovieSearch.helpers({
   }
 });
 
-Template.MovieSearch.onRendered(function(){
+Template.movie_search.onRendered(function(){
   if (s_movies.find().fetch().length) {
     s_movies.remove(s_movies.find().fetch()[0]._id)      
   }     
 });
 
-Template.MovieSearch.onDestroyed(function(){
+Template.movie_search.onDestroyed(function(){
   if (s_movies.find().fetch().length) {
     s_movies.remove(s_movies.find().fetch()[0]._id)      
   }
@@ -32,7 +32,7 @@ Template.MovieSearch.onDestroyed(function(){
 
 
 
-Template.MovieSearch.events({
+Template.movie_search.events({
   "keyup .textSearch": function (evt, template) {
     var keyword = evt.target.value;
     if (keyword.length >= 3) {

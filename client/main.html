@@ -1,0 +1,39 @@
+<head>
+  <title>chillflix</title>
+</head>
+
+<body>
+  <h1>Chillflix</h1>
+    <ul>
+        <li><a href="#" class="user_list">User_list</a></li>
+        <li><a href="#" class="edit_profile">Edit Profile</a></li>
+        <li><a href="#" class="movie_search">Movie Preferences</a></li>
+        <li><a href="#" class="match_list">View Matches</a></li>
+    </ul>
+    
+    {{> Template.dynamic template=template_name }}
+    
+    {{> loginButtons}}
+</body>
+
+<template name="index">
+    <p>Home</p>
+</template>
+
+<template name="user_info">  
+{{#if currentUser}}
+    <p>{{currentUser.services.facebook.gender}}</p>
+    <p>{{currentUser.services.facebook.age_range.min}}</p>
+    <img src={{user_image}}>               
+
+    {{else}}
+    <p>No one is logged in</p>
+
+    {{/if}}  
+</template>
+
+
+<template name="edit_profile">
+    <h1>{{currentUser.services.facebook.name}}</h1>
+    <h3>Edit your profile</h3>
+</template>
