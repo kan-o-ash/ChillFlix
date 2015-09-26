@@ -1,1 +1,18 @@
-/* CSS declarations go here */
+#but-nope, #but-yes {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 30px;
+  line-height: 1.42;
+  border-radius: 30px;
+  margin-left: 25%;
+  margin-bottom: 10px;      
+} 
+
+.fa-heart {
+  color: seagreen;
+}
+.fa-close {
+  color: indianred;
+}

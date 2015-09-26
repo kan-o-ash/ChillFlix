@@ -1,28 +1,32 @@
 <template name="user_list">
-    {{#each users}}
-        Name: {{profile.name}}<br>
-        Gender: {{services.facebook.gender}}<br>
-    <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=100&height=100"><br>
-        <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
-        {{#with this}}
-            {{#each user_likes}}
-                <div>
-                    Likes <b>{{> movie_title}}</b>
-                </div>
-            {{/each}}
-        {{/with}}
-    {{/each}}  
-    
-    {{> like_buttons}}<br>
-    
+
+    <div class="panel-group">
+        {{#each users}}
+        <div class="panel panel-default" style="width: 80%; margin-left: 10%">
+            <div class="panel-heading text-center">
+                <h2>{{profile.name}}, {{services.facebook.gender}}</h2>
+            </div>
+            <div class="panel-body text-center">
+            <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail">
+            </div>
+            <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
+            <ul class="list-group">
+                    {{#with this}}
+                        {{#each user_likes}}
+                            <div>
+                                <li class="list-group-item text-center">{{> movie_title}}</li>
+                            </div>
+                        {{/each}}
+                    {{/with}}
+            </ul>
+        </div>
+        {{/each}}
+    </div> 
+    <a href="#" class="btn btn-default btn-circle" id="but-nope"><i class="fa fa-close"></i></a>          
+    <a href="#" class="btn btn-default btn-circle" id="but-yes"><i class="fa fa-heart"></i></a> 
     
 </template>
 
 <template name="movie_title">
-    {{movieTitle}}   
-</template>
-
-<template name="like_buttons">
-    <a href="#">YES</a>
-    <a href="#">NO</a>
+    <h3>{{movieTitle}}</h3>
 </template>
