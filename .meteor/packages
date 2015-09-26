@@ -10,3 +10,5 @@ insecure
 accounts-facebook
 accounts-ui
 service-configuration
+http
+jquery
