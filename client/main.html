@@ -4,16 +4,11 @@
 
 <body>
   <h1>Chillflix</h1>
-    <!-- {{> login}}
-    {{> user_info}}
-        {{> user_list}}<br><br><br>
-
-    -->
-    
-    
     <ul>
         <li><a href="#" class="user_list">User_list</a></li>
         <li><a href="#" class="edit_profile">Edit Profile</a></li>
+        <li><a href="#" class="movie_search">Movie Preferences</a></li>
+        <li><a href="#" class="match_list">View Matches</a></li>
     </ul>
     
     {{> Template.dynamic template=template_name }}
@@ -23,16 +18,6 @@
 
 <template name="index">
     <p>Home</p>
-</template>
-
-<template name="login">
-    {{#if currentUser}}
-        {{currentUser.services.facebook.name}} -
-        {{currentUser.services.facebook.gender}}
-        <button id="logout">Logout</button>
-    {{else}}
-        <button id="facebook-login" class="btn btn-default"> Login with Facebook</button>
-    {{/if}}
 </template>
 
 <template name="user_info">  
@@ -47,15 +32,6 @@
     {{/if}}  
 </template>
 
-
-<template name="user_list">
-    {{#each users}}
-        Name: {{profile.name}}<br>
-        Gender: {{services.facebook.gender}}<br>
-    <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=100&height=100"><br>
-        <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
-    {{/each}}    
-</template>
 
 <template name="edit_profile">
     <h1>{{currentUser.services.facebook.name}}</h1>
