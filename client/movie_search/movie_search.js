@@ -10,8 +10,46 @@ function findMovies(keyword, cbk) {
   var final_url = url + api_key + "&query=" + keyword + lang;
 
   HTTP.get(final_url, cbk);
-
 };
+
+function dropSearchResults () {
+  if (s_movies.find().fetch().length) {
+    s_movies.remove(s_movies.find().fetch()[0]._id)      
+  }     
+};
+
+function showMovies (err, resp) {
+  if (resp) {
+    window.movies = JSON.parse(resp.content).results;
+
+    if (s_movies.find().fetch().length) {
+      s_movies.remove(s_movies.find().fetch()[0]._id)
+    }
+    s_movies.insert({'items':movies});
+  }
+}
+
+function insertMovieLike (movie) {
+  // Find outif we've already stored movie
+  var movie_record = Movies.find({"title": movie.title}).fetch();
+  if (!movie_record.length){
+    // insert new movie into movies collection
+    var movie_record_id = Movies.insert(movie);
+  }
+  else {
+    movie_record_id = movie_record._id;
+  }
+
+  if (MovieLikes.find({"movie_id": movie_record_id}).fetch().length){
+  }
+  else {
+    // insert new movie liked
+    var movie_like = MovieLikes.insert({
+      "user_id": Meteor.userId(),
+      "movie_id": movie_record_id
+    });
+  }
+}
 
 Template.movie_search.helpers({
   results: function () {
@@ -22,80 +60,32 @@ Template.movie_search.helpers({
 });
 
 Template.movie_search.onRendered(function(){
-  if (s_movies.find().fetch().length) {
-    s_movies.remove(s_movies.find().fetch()[0]._id)      
-  }     
+  dropSearchResults();
 });
 
 Template.movie_search.onDestroyed(function(){
-  if (s_movies.find().fetch().length) {
-    s_movies.remove(s_movies.find().fetch()[0]._id)      
-  }
+  dropSearchResults();
 });
-
-
   
 Template.movie_search.events({
   "keyup .textSearch": function (evt, template) {
     var keyword = evt.target.value;
     if (keyword.length >= 3) {
-      findMovies(keyword,
-        function (err, resp) {
-          if (resp) {
-            window.movies = JSON.parse(resp.content).results;
-
-            if (s_movies.find().fetch().length) {
-              s_movies.remove(s_movies.find().fetch()[0]._id)
-            }
-            s_movies.insert({'items':movies});
-
-            // if (window.s_movies) {delete window.s_movies};
-          
-            // window.s_movies = new Mongo.Collection("s_movies");
-
-            // for (var i in movies) {
-            //   window.s_movies.insert(movies[i]);
-            // }
-          }
-        });
+      findMovies(keyword, showMovies);
     }
     else {
-      if (s_movies.find().fetch().length) {
-        s_movies.remove(s_movies.find().fetch()[0]._id)      
-      }
+      dropSearchResults();
     }
   },
+
   "click .searchItem": function (evt, template) {
     var movie_index = evt.target.getAttribute("movieind");
     for (var i in window.movies) {
       var movie = window.movies[i]
       if (movie_index == movie.id){
-        var movie_record = Movies.find({"title": movie.title}).fetch();
-        console.log(movie_record);
-        if (!movie_record.length){
-          // insert new movie into movies collection
-          var movie_record_id = Movies.insert(movie);
-        }
-        else {
-          movie_record_id = movie_record._id;
-        }
-        console.log(movie_record_id);
-
-
-        if (MovieLikes.find({"movie_id": movie_record_id}).fetch().length){
-          console.log("already added");
-        }
-        else {
-          // insert new movie liked
-          var movie_like = MovieLikes.insert({
-            "user_id": Meteor.userId(),
-            "movie_id": movie_record_id
-          });
-          console.log(movie_like);
-        }
+        insertMovieLike(movie);
       }
     }
-    console.log(template)
   }
 });
 
