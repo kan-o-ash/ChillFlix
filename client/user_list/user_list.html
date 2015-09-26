@@ -4,5 +4,25 @@
         Gender: {{services.facebook.gender}}<br>
     <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=100&height=100"><br>
         <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
-    {{/each}}    
+        {{#with this}}
+            {{#each user_likes}}
+                <div>
+                    Likes <b>{{> movie_title}}</b>
+                </div>
+            {{/each}}
+        {{/with}}
+    {{/each}}  
+    
+    {{> like_buttons}}<br>
+    
+    
+</template>
+
+<template name="movie_title">
+    {{movieTitle}}   
+</template>
+
+<template name="like_buttons">
+    <a href="#">YES</a>
+    <a href="#">NO</a>
 </template>
