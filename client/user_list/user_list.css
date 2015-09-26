@@ -7,3 +7,73 @@
   margin-left: 10%;
   position: absolute; 
 }
+
+.panel-body {
+  padding: 0;
+}
+
+.panel-body img {
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+.panel-footer {
+  font-size: 1.3em;
+}
+
+.panel-footer h3 {
+  margin: 0;
+}
+
+.movieLikes {
+  padding: 5px 15px;
+  font-size: 1.3em;
+}
+
+.movieLikeItem:after {
+  content: ",";
+}
+
+.movieLikeItem:last-child:after {
+  content: "";
+}
+
+#but-nope, #but-yes {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 40px;
+  border-radius: 35px;
+}
+
+#but-yes i {
+  margin: 10px 0 0 3px;
+}
+
+#but-nope i {
+  font-size: 50px;
+}
+
+.likesDiv {
+  width: 60%;
+  position: absolute;
+  margin-left: 20%;
+  bottom: 20px;
+}
+
+#but-nope {
+  float:left;
+}
+
+#but-yes {
+  float:right;
+}
+
+.fa-heart {
+  color: seagreen;
+}
+.fa-close {
+  color: indianred;
+}
