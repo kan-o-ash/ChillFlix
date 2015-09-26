@@ -1,19 +1,48 @@
 <head>
-  <title>chillflix</title>
+    <title>chillflix</title>
+    
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+    <!--FONT AWESOME -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="/client/main.css">
+    
 </head>
 
 <body>
-  <h1>Chillflix</h1>
-    <ul>
-        <li><a href="#" class="user_list">User_list</a></li>
-        <li><a href="#" class="edit_profile">Edit Profile</a></li>
-        <li><a href="#" class="movie_search">Movie Preferences</a></li>
-        <li><a href="#" class="match_list">View Matches</a></li>
-    </ul>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ChillFlix</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#" class="user_list">User_list</a></li>
+            <li><a href="#" class="edit_profile">Edit your profile</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="movie_search"><span class="glyphicon glyphicon-film"></span></a></li>
+            <li><a href="#" class="match_list"><span class="glyphicon glyphicon-fire"></span></a></li>
+            <li><a href="#"><span></span>{{> loginButtons}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     
     {{> Template.dynamic template=template_name }}
     
-    {{> loginButtons}}
+    
 </body>
 
 <template name="index">
