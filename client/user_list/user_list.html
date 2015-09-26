@@ -2,24 +2,7 @@
 
     <div class="panel-group">
         {{#each users}}
-        <div class="panel panel-default" style="z-index:{{this.index}}">
-            <div class="panel-heading text-center">
-                <h2>{{profile.name}}, {{services.facebook.gender}}</h2>
-            </div>
-            <div class="panel-body text-center">
-            <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail">
-            </div>
-            <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
-            <ul class="list-group">
-                    {{#with this}}
-                        {{#each user_likes}}
-                            <div>
-                                <li class="list-group-item text-center">{{> movie_title}}</li>
-                            </div>
-                        {{/each}}
-                    {{/with}}
-            </ul>
-        </div>
+            {{> user_card}}
         {{/each}}
     </div> 
     <div class="likesDiv">
@@ -28,6 +11,30 @@
     </div>
 </template>
 
+<template name="user_card">
+    <div class="panel panel-default" style="z-index:{{this.index}}" id="{{_id}}">
+        <div class="panel-body text-center">
+            <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail">
+        </div>
+        <div class="panel-footer text-center">
+            <h3>{{profile.name}}</h3>
+        </div>
+        <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
+        {{#with this}}
+            {{>movie_list}}
+        {{/with}}
+    </div>
+</template>
+
+<template name="movie_list">
+    <div class="movieLikes">
+        <span style="font-weight:bold;">In common: </span>
+        {{#each user_likes}}
+            {{> movie_title}}
+        {{/each}}
+    </div>
+</template>
+
 <template name="movie_title">
-    <h3>{{movieTitle}}</h3>
+    <span class="movieLikeItem">{{movieTitle}}</span>
 </template>
