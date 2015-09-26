@@ -1,0 +1,18 @@
+<template name="MovieSearch">
+  <div class="movieSearch">
+    <input type="text" class="textSearch"/>
+    <div class="results">
+      {{#each results}}
+        {{#each items}}
+          {{>result}}
+        {{/each}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="result">
+  <div class="searchItem">
+    {{title}}
+  </div>
+</template>
