@@ -2,7 +2,7 @@
 
     <div class="panel-group">
         {{#each users}}
-        <div class="panel panel-default" style="width: 80%; margin-left: 10%">
+        <div class="panel panel-default" style="z-index:{{this.index}}">
             <div class="panel-heading text-center">
                 <h2>{{profile.name}}, {{services.facebook.gender}}</h2>
             </div>
@@ -22,9 +22,10 @@
         </div>
         {{/each}}
     </div> 
-    <a href="#" class="btn btn-default btn-circle" id="but-nope"><i class="fa fa-close"></i></a>          
-    <a href="#" class="btn btn-default btn-circle" id="but-yes"><i class="fa fa-heart"></i></a> 
-    
+    <div class="likesDiv">
+        <a href="#" class="btn btn-default btn-circle" id="but-nope"><i class="fa fa-close"></i></a>          
+        <a href="#" class="btn btn-default btn-circle" id="but-yes"><i class="fa fa-heart"></i></a> 
+    </div>
 </template>
 
 <template name="movie_title">

@@ -1,6 +1,10 @@
 Template.user_list.helpers({  
     users: function() {
-        return Meteor.users.find({'services.facebook.id': {$ne : Meteor.user().services.facebook.id}});  
+        var users = Meteor.users.find({'services.facebook.id': {$ne : Meteor.user().services.facebook.id}}).map(function(doc, index, cursor) {
+            var i = _.extend(doc, {index: index});
+            return i;
+        });
+        return users
     },
     
     user_likes: function() {
