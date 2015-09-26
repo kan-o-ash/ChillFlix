@@ -6,9 +6,22 @@
   font-size: 30px;
   line-height: 1.42;
   border-radius: 30px;
-  margin-left: 25%;
-  margin-bottom: 10px;      
 } 
+
+.likesDiv {
+  width: 60%;
+  position: absolute;
+  margin-left: 20%;
+  bottom: 20px;
+}
+
+#but-nope {
+  float:left;
+}
+
+#but-yes {
+  float:right;
+}
 
 .fa-heart {
   color: seagreen;
@@ -16,3 +29,4 @@
 .fa-close {
   color: indianred;
 }
+
