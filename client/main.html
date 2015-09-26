@@ -1,16 +1,17 @@
 <head>
   <title>chillflix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <h1>Chillflix</h1>
+  <div class="container">
+    <h1>Chillflix</h1>
     {{> navigation}}
     <div class="container">
-    
-    {{> Template.dynamic template=template_name }}
-    
-    {{> loginButtons}}
+      {{> Template.dynamic template=template_name }}
+      {{> loginButtons}}
     </div>
+  </div>
 </body>
 
 <template name="index">
