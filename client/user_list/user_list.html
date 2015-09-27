@@ -1,12 +1,15 @@
 <template name="user_list">
-
+{{#if currentUser}}
     <div class="panel-group">
         {{> user_card}}
     </div> 
     <div class="likesDiv">
         <a href="#" class="btn btn-default btn-circle" id="but-nope"><i class="fa fa-close"></i></a>          
-        <a href="#" class="btn btn-default btn-circle" id="but-yes"><i class="fa fa-heart"></i></a> 
+        <a href="#" class="btn btn-default btn-circle" id="but-yes"><i class="fa fa-heart" id="yes"></i></a> 
     </div>
+        
+{{else}}
+{{/if}}
 </template>
 
 <template name="user_card">
