@@ -1,1 +1,41 @@
+.btn-geckoboard,
+.edit_profile,
+.movie_search,
+.match_list{
+	background: transparent;
+	background-image: none;
+	border:none;
+	color: #ffffff;
+	letter-spacing: 1px;
+	font-weight: 600;
+	text-decoration: none ! important;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out 0s;		
+	-webkit-transition: all 0.3s ease-in-out 0s;	
+    margin-top: 5px; 
+}
+.btn-geckoboard:hover,
+.edit_profile:hover,
+.movie_search:hover,
+.match_list:hover{
+	background: transparent;
+	opacity: 0.6; 
+}
 
+.btn-geckoboard{
+margin-right:10px; 
+}
+
+body{
+background-color:whitesmoke; 
+}
+
+@font-face {
+   font-family: myFirstFont;
+   src: url("/Forgotten-Futurist-Shadow.ttf.eot");
+}
+
+.navbar-brand{
+   font-family: myFirstFont;
+}

@@ -19,25 +19,20 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">ChillFlix</a>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#" class="user_list">User_list</a></li>
-            <li><a href="#" class="edit_profile">Edit your profile</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="movie_search"><span class="glyphicon glyphicon-film"></span></a></li>
-            <li><a href="#" class="match_list"><span class="glyphicon glyphicon-fire"></span></a></li>
-            <li><a href="#"><span></span>{{> loginButtons}}</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<div class="navbar navbar-inverse fixed-top" style="background-color:#FF6666; border-color:#FF6666; border-radius: 0 !important;">
+
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand" href="#">Chillflix</a>
+    </div>
+    <div class="navbar-header pull-right">
+      <button type="button" class="edit_profile"><span class="fa fa-user fa-2x"></span></button>
+      <button type="button" class="movie_search"><span class="fa fa-film fa-2x"></span></button>
+      <button type="button" class="match_list"><span class="fa fa-heart fa-2x"></span></button>
+        {{> login}}
+
+        
+    </div>
+</div>
 
     {{> Template.dynamic template=template_name }}
     
