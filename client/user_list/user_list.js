@@ -4,7 +4,13 @@ function showNext(){
     if (card_users[ind]) {
         Session.set("cur_swipe_i", ind);
         Session.set("cur_swipe_user", card_users[ind]);
-        $(".panel")[0].style.left = "-" + $(".panel")[0].style.left
+        if ($(".panel")[0].style.left[0] == "-") {
+            $(".panel")[0].style.left = "200%";
+        }
+        else {
+            $(".panel")[0].style.left = "-300%";
+        }
+
         $(".panel").animate({
           'left': "10%"
         }, 500);
@@ -14,13 +20,19 @@ function showNext(){
     }
 };
 
-Template.user_list.onRendered( function () {
+Tracker.autorun(function(){
 
-    var users = Meteor.users.find({'services.facebook.id': {$ne : Meteor.user().services.facebook.id}})
+    var users = Meteor.users.find({'_id': {$ne : Meteor.userId()}})
     window.card_users = users.fetch()
     Session.set("cur_swipe_user", card_users[0]);
     Session.set("cur_swipe_i", 0);
+})
 
+Template.user_list.onRendered( function () {
+    var users = Meteor.users.find({'_id': {$ne : Meteor.userId()}})
+    window.card_users = users.fetch()
+    Session.set("cur_swipe_user", card_users[0]);
+    Session.set("cur_swipe_i", 0);
 });
 
 Template.user_card.helpers({
@@ -38,9 +50,8 @@ Template.user_list.events({
         user_id = Session.get("cur_swipe_user")._id;
         console.log(user_id);
 
-
         $(".panel").animate({
-        'right': "200%"
+          'left': "-300%"
         }, 500, showNext);
     },
     "click #but-yes": function (evt, templ) {

@@ -10,6 +10,9 @@ Template.body.helpers({
 });
 
 Template.body.events({
+  "click #logo": function() {
+    Session.set("templateName", "user_list");
+  },
   "click .user_list": function() {
     Session.set("templateName", "user_list");
   },
