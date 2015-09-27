@@ -4,12 +4,12 @@
 
 .panel {
   width: 80%; 
-  margin-left: 10%;
+  left: 10%;
   position: absolute; 
 }
 
 .panel-body {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .panel-body img {
@@ -22,7 +22,8 @@
   font-size: 1.3em;
 }
 
-.panel-footer h3 {
+.panel-footer h4 {
+  font-size: 1.3em;
   margin: 0;
 }
 

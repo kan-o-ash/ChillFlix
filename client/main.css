@@ -1,20 +1,38 @@
+html {
+  overflow: hidden;
+}
+
+.navbar.fixed-top {
+  padding: 5px;
+
+}
+
+.navbar-header {
+
+}
+
+#logo:hover {
+  text-decoration: none;
+}
+
 .btn-geckoboard,
 .edit_profile,
 .movie_search,
 .match_list{
 	background: transparent;
 	background-image: none;
-	border:none;
+	border: none;
 	color: #ffffff;
 	letter-spacing: 1px;
 	font-weight: 600;
-	text-decoration: none ! important;
+	text-decoration: none !important;
 	text-shadow: none;
 	text-transform: uppercase;
 	transition: all 0.3s ease-in-out 0s;		
 	-webkit-transition: all 0.3s ease-in-out 0s;	
     margin-top: 5px; 
 }
+
 .btn-geckoboard:hover,
 .edit_profile:hover,
 .movie_search:hover,
@@ -23,8 +41,16 @@
 	opacity: 0.6; 
 }
 
+.btn-geckoboard:focus,
+.edit_profile:focus,
+.movie_search:focus,
+.match_list:focus{
+  border: none;
+  outline: none;
+}
+
 .btn-geckoboard{
-margin-right:10px; 
+/*margin-right:10px; */
 }
 
 body{

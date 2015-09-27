@@ -1,9 +1,7 @@
 <template name="user_list">
 {{#if currentUser}}
     <div class="panel-group">
-        {{#each users}}
-            {{> user_card}}
-        {{/each}}
+        {{> user_card}}
     </div> 
     <div class="likesDiv">
         <a href="#" class="btn btn-default btn-circle" id="but-nope"><i class="fa fa-close"></i></a>          
@@ -15,15 +13,14 @@
 </template>
 
 <template name="user_card">
-    <div class="panel panel-default" style="z-index:{{this.index}}" id="{{_id}}">
+    <div class="panel panel-default" style="" id="{{user._id}}">
         <div class="panel-body text-center">
-            <img src="http://graph.facebook.com/{{services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail">
+            <img src="http://graph.facebook.com/{{user.services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail">
         </div>
         <div class="panel-footer text-center">
-            <h3>{{profile.name}}</h3>
+            <h4>{{user.profile.name}}</h4>
         </div>
-        <!-- INSERT AN EACH LOOP TO RENDER EACH OF THE LIKES FOR A USER -->
-        {{#with this}}
+        {{#with user}}
             {{>movie_list}}
         {{/with}}
     </div>
