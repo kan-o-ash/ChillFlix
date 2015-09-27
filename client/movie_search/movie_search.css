@@ -1,5 +1,4 @@
-p {
-
+/*p {
 	margin-left: auto;
 	margin-right:auto;
 	display: block;
@@ -7,22 +6,21 @@ p {
 	font-size: 3em;
 	font-style: bold;
 	text-align: center;
+}
+*/
 
-
+.movieSearch h3 {
+  text-align: center;
 }
 
-
-
-input, .searchItem {
-
-  font-size: 1em;
-    width: 300px;
-  height: 50	px;
-	margin-left: auto;
-	margin-right: auto;
- display: block;
+.movieSearch .textSearch,
+.movieSearch .searchItem {
+  font-size: 2em;
+  width: 300px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   margin-top: 1px;
-  opacity: 0.6;
   text-align: center;
-
 }

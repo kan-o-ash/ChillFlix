@@ -24,8 +24,9 @@ function showNext(){
 Tracker.autorun(function(){
     Meteor.call('swipable', function (err, resp){
       if (resp) {
-        console.log(resp);
-        var users = Meteor.users.find({'_id': {$ne : Meteor.userId(), $in: resp}})
+        // console.log(resp);
+        var users = Meteor.users.find({'_id': {$ne : Meteor.userId(),
+                                            $in: resp}})
         window.card_users = users.fetch()
         if (users.fetch().length>0) {
             Session.set("cur_swipe_user", card_users[0]);
@@ -65,7 +66,7 @@ Template.user_list.events({
         // user_id = Session.get("cur_swipe_user");
 
         user_id = Session.get("cur_swipe_user")._id;
-        console.log(user_id);
+        // console.log(user_id);
 
         $(".panel").animate({
           'left': "-300%"
