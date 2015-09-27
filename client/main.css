@@ -4,15 +4,7 @@ html {
 
 .navbar.fixed-top {
   padding: 5px;
-
-}
-
-.navbar-header {
-
-}
-
-#logo:hover {
-  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .btn-geckoboard,
@@ -30,7 +22,7 @@ html {
 	text-transform: uppercase;
 	transition: all 0.3s ease-in-out 0s;		
 	-webkit-transition: all 0.3s ease-in-out 0s;	
-    margin-top: 5px; 
+  margin-top: 5px; 
 }
 
 .btn-geckoboard:hover,
@@ -54,12 +46,15 @@ html {
 }
 
 body{
-background-color:whitesmoke; 
+  background-color:whitesmoke; 
 }
 
 #logo{
-color:azure;
-font-family: 'Montserrat', sans-serif;
-font-size: 30px;
+  color:azure;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
 }
 
+#logo:hover {
+  text-decoration: none;
+}
