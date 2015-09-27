@@ -1,0 +1,35 @@
+
+<template name="edit_profile">
+    
+    <div class="panel panel-default text-center">
+      <div class="panel-body"><img src="http://graph.facebook.com/{{currentUser.services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail"></div>
+        
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="badge"><span class="fa fa-gear fa-lg"></span></span>
+              <b>Name:</b> {{currentUser.services.facebook.name}}
+          </li>
+            
+          <li class="list-group-item">
+            <span class="badge"><span class="fa fa-gear fa-lg"></span></span>
+            <b>Age:</b> {{currentUser.services.facebook.age_range.min}}
+          </li>
+            
+         <li class="list-group-item">
+            <span class="badge"><span class="fa fa-gear fa-lg"></span></span>
+            <b>Gender:</b> {{currentUser.services.facebook.gender}}
+          </li>
+            
+          <li class="list-group-item">
+            <span class="badge"><span class="fa fa-gear fa-lg"></span></span>
+              <b>Location:</b> {{currentUser.services.facebook.locale}}
+          </li>
+            
+            
+            
+        </ul>
+        
+        
+    </div>
+
+</template>

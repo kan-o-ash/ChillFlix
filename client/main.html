@@ -15,6 +15,8 @@
     
     <link rel="stylesheet" href="/client/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -22,12 +24,13 @@
 <div class="navbar navbar-inverse fixed-top" style="background-color:#FF6666; border-color:#FF6666; border-radius: 0 !important;">
 
     <div class="navbar-header pull-left">
-      <a class="navbar-brand" href="#">Chillflix</a>
+      <a class="navbar-brand" href="#" id="logo">Chillflix <span class="fa fa-tv "></span></a>
     </div>
     <div class="navbar-header pull-right">
-      <button type="button" class="edit_profile"><span class="fa fa-user fa-2x"></span></button>
+
       <button type="button" class="movie_search"><span class="fa fa-film fa-2x"></span></button>
       <button type="button" class="match_list"><span class="fa fa-heart fa-2x"></span></button>
+    <button type="button" class="edit_profile"><span class="fa fa-gear fa-2x"></span></button>
         {{> login}}
 
         
@@ -42,20 +45,4 @@
     <p>Home</p>
 </template>
 
-<template name="user_info">  
-{{#if currentUser}}
-    <p>{{currentUser.services.facebook.gender}}</p>
-    <p>{{currentUser.services.facebook.age_range.min}}</p>
-    <img src={{user_image}}>               
 
-    {{else}}
-    <p>No one is logged in</p>
-
-    {{/if}}  
-</template>
-
-
-<template name="edit_profile">
-    <h1>{{currentUser.services.facebook.name}}</h1>
-    <h3>Edit your profile</h3>
-</template>
