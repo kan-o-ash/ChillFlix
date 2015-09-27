@@ -1,20 +1,3 @@
-input, .searchItem {
-  font-size: 2em;
-}
-
-input {
-    width: 300px;
-    height: 50px;
-	margin-left: auto;
-	margin-right:auto;
-    display: block;
-    margin-top: 70px;
-    border: 3px solid #8AC007;
-    opacity: 0.6;
-
-}
-
-
 p {
 
 	margin-left: auto;
@@ -31,5 +14,15 @@ p {
 
 
 input, .searchItem {
+
   font-size: 1em;
+    width: 300px;
+  height: 50	px;
+	margin-left: auto;
+	margin-right: auto;
+ display: block;
+  margin-top: 1px;
+  opacity: 0.6;
+  text-align: center;
+
 }
