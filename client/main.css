@@ -35,11 +35,9 @@ body{
 background-color:whitesmoke; 
 }
 
-@font-face {
-   font-family: myFirstFont;
-   src: url("/Forgotten-Futurist-Shadow.ttf.eot");
+#logo{
+color:azure;
+font-family: 'Montserrat', sans-serif;
+font-size: 30px;
 }
 
-.navbar-brand{
-   font-family: myFirstFont;
-}
