@@ -28,18 +28,20 @@ function showMovies (err, resp) {
 
 function insertMovieLike (movie) {
   // Find outif we've already stored movie
-  var movie_record = Movies.find({"title": movie.title}).fetch();
-  if (!movie_record.length){
+  var movie_record = Movies.findOne({"title": movie.title});
+    console.log(0);
+  if (!movie_record){
     // insert new movie into movies collection
+    console.log(1);
     var movie_record_id = Movies.insert(movie);
   }
   else {
+    console.log(2);
     movie_record_id = movie_record._id;
   }
 
-  if (MovieLikes.find({"movie_id": movie_record_id}).fetch().length){
-  }
-  else {
+  if (!MovieLikes.findOne({"user_id": Meteor.userId(),"movie_id": movie_record_id})){
+    console.log(3);
     // insert new movie liked
     var movie_like = MovieLikes.insert({
       "user_id": Meteor.userId(),
