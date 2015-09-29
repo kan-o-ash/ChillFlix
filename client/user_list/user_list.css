@@ -78,3 +78,23 @@
 .fa-close {
   color: indianred;
 }
+
+#welcome {
+  color:darkgrey;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+    text-align: center;
+    margin-top:100px;
+}
+#tag-line {
+  color:darkgrey;
+  font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+#pink-text{
+color:#ff9999;  
+}
+#login{
+text-align: center; 
+}

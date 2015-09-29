@@ -53,8 +53,13 @@ body{
   color:azure;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
+    text-decoration: none;
 }
 
 #logo:hover {
+  text-decoration: none;
+}
+
+#logo:ative {
   text-decoration: none;
 }

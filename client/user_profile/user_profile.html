@@ -1,17 +1,18 @@
 
 <template name="edit_profile">
-    
+
     <div class="panel panel-default text-center">
-      <div class="panel-body"><img src="http://graph.facebook.com/{{currentUser.services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail"></div>
-        
+      <div class="panel-body">
+          <img src="http://graph.facebook.com/{{currentUser.services.facebook.id}}/picture/?width=250&height=250" class="img-thumbnail"></div>
         <ul class="list-group">            
           <li class="list-group-item">
             <b>Age:</b> {{currentUser.services.facebook.age_range.min}}
           </li>
-            
+        <!--
          <li class="list-group-item">
             <b>Gender:</b> {{currentUser.services.facebook.gender}}
-          </li>  
+          </li> 
+        -->
         
         <li class="list-group-item">
             <b>Gender Preference:</b><br><br>
@@ -30,17 +31,9 @@
                   </div>
                 </div>   
             </li> 
-
-
-
-            
-
-            
-            
-            
+     
         </ul>
-        
-        
+        <h3 id="login">{{> loginButtons}}</h3>
     </div>
 
 </template>
