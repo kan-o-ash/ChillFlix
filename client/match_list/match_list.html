@@ -1,13 +1,20 @@
 <template name="match_list">
     <div class="matchList list-group">
-      {{#each matches}}
-        <div class="matchItem">
-          <span class="matchName">{{match_name user1_id user2_id}}</span>
-        </div>
-      {{/each}}
+    
+    <ul class="list-group"> 
+          {{#each matches}}
+        
+        <li class="list-group-item">
+            <span class="matchName">{{match_name user1_id user2_id}}</span>
+        </li>
+          {{/each}}
+            
+        
+    </ul>    
+        
       {{#if no_matches}}
-        <h3>No matches yet.</h3>
-        <h3>Keep swiping!</h3>
+    <h1 id="welcome">No Matches Yet...<br><span class="fa fa-frown-o fa-4x"></span></h1>
+    <h4 id="tag-line">Keep Swiping!</h4>
       {{/if}}
     </div>  
 </template>
